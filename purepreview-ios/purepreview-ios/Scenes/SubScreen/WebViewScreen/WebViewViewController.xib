@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewViewController" customModule="purepreview_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="yW3-Ji-J46" id="4qZ-HF-FBf"/>
+                <outlet property="loadingView" destination="H4e-6r-vlq" id="Ux9-Rv-K5C"/>
+                <outlet property="reloadButton" destination="PqD-7R-tmn" id="F0z-yl-JOF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webview" destination="0Tc-gZ-NuO" id="u8X-sY-n3d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Tc-gZ-NuO" customClass="FullScreenWKWebView" customModule="purepreview_ios" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqD-7R-tmn" customClass="CustomButton" customModule="purepreview_ios" customModuleProvider="target">
+                    <rect key="frame" x="359" y="33" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="5jj-1C-QLW"/>
+                        <constraint firstAttribute="height" constant="30" id="RCb-Ah-u6l"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="btn_reload"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yW3-Ji-J46">
+                    <rect key="frame" x="25" y="33" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="RVn-cs-eQ1"/>
+                        <constraint firstAttribute="width" constant="30" id="pfB-j4-fG3"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="btn _close"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="H4e-6r-vlq">
+                    <rect key="frame" x="157" y="398" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="ZaQ-ve-xph"/>
+                        <constraint firstAttribute="height" constant="100" id="ouT-AJ-cWv"/>
+                    </constraints>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="0Tc-gZ-NuO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="367-6e-52W"/>
+                <constraint firstItem="PqD-7R-tmn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="33" id="Arm-7G-M9M"/>
+                <constraint firstAttribute="trailing" secondItem="0Tc-gZ-NuO" secondAttribute="trailing" id="Bm9-pm-pWZ"/>
+                <constraint firstItem="H4e-6r-vlq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D4g-5s-jFK"/>
+                <constraint firstItem="yW3-Ji-J46" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="33" id="NTg-HZ-3pP"/>
+                <constraint firstItem="yW3-Ji-J46" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="nOF-zx-sOB"/>
+                <constraint firstItem="H4e-6r-vlq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nxE-WI-3d2"/>
+                <constraint firstItem="0Tc-gZ-NuO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oUV-6D-TfM"/>
+                <constraint firstAttribute="trailing" secondItem="PqD-7R-tmn" secondAttribute="trailing" constant="25" id="qv3-ib-e8h"/>
+                <constraint firstAttribute="bottom" secondItem="0Tc-gZ-NuO" secondAttribute="bottom" id="r7z-KC-nNm"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn _close" width="16" height="16"/>
+        <image name="btn_reload" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

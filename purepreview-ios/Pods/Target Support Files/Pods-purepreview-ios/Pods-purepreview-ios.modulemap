@@ -1,0 +1,6 @@
+framework module Pods_purepreview_ios {
+  umbrella header "Pods-purepreview-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
